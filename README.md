@@ -22,3 +22,6 @@
 
 ## Run with server
 - python manage.py runserver
+
+## Run tests
+- python3 manage.py test
