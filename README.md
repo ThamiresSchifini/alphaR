@@ -8,13 +8,13 @@
 ## Instalation
 - git clone https://github.com/ThamiresSchifini/alphaR.git
 - create and activate a virtual env
-    - python3 -m venv myenv
+    - venv myenv
     - source myenv/bin/activate
 - Install dependencies
-    - pip install -r requirements.txt
+    - python3 -m pip install -r requirements.txt
 - Execute the migrations
-    - python manage.py makemigrations
-    - python manage.py migrate
+    - python3 manage.py makemigrations
+    - python3 manage.py migrate
 
 ## Run with docker
 - docker build -f Dockerfile -t alpha-r .
