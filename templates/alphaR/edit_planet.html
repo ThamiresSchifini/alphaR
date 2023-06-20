@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Planeta</title>
+</head>
+<body>
+    <h1>Editar Planeta</h1>
+    <form id="planet-form" data-planet-id="{{ form.instance.id }}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+
+</body>
+</html>

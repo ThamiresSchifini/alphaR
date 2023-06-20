@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remover Planeta</title>
+</head>
+<body>
+    <h1>Remover Planeta</h1>
+    <p>Deseja realmente remover o planeta "{{ planet.name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sim, remover</button>
+    </form>
+</body>
+</html>

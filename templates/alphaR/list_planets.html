@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Planetas</title>
+</head>
+<body>
+    <h1>Lista de Planetas</h1>
+    <ul>
+        {% for planet in planets %}
+            <li>Planeta: {{ planet.name }} - ID: {{ planet.id }} <br>
+                Elementos químicos: {{ planet.chemical_elements }} <br>
+                Porcentagem de água: {{ planet.percentage_of_water }}% <br>
+                Distância até alphaR: {{ planet.alphaR_distance }}km <br>
+                Probabilidade de abrigar vida: {{ planet.probability_of_life }}</li>
+
+                <a href="{% url 'edit_planet' planet.id %}">Editar</a>
+                <a href="{% url 'delete_planet' planet.id %}">Deletar</a>
+        {% empty %}
+            <li>Nenhum planeta encontrado</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_planet' %}">Criar planeta</a>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if planets.has_previous %}
+                <br><a href="?page=1">&laquo; Primeira - </a>
+                <a href="?page={{ planets.previous_page_number }}">Anterior</a>
+            {% endif %}
+
+            <br><span class="current-page">{{ planets.number }}</span>
+
+            {% if planets.has_next %}
+                <a href="?page={{ planets.next_page_number }}">Próxima - </a>
+                <a href="?page={{ planets.paginator.num_pages }}">Última &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</body>
+</html>
